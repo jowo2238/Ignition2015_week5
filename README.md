@@ -5,13 +5,28 @@ Diving deeper in the MVC aspects of Rails
 
 #### Required 
 1. Read the [Odin Project Routing Guide](http://www.theodinproject.com/ruby-on-rails/routing) and use it to <strong>answer the following questions</strong>
-  1. What is the "Root" route?
-  1. What are the seven RESTful routes for a resource?
-  1. Which RESTful routes share the same URL but use different verbs?
-  1. How do you specify an ID or other variable in a route?
-  1. How can you easily write all seven RESTful routes in Rails?
-  1. What is the Rails helper method that creates the HTML for links?
-1. Read the [Odin Project Controller Guide](http://www.theodinproject.com/ruby-on-rails/controllers)
+  1. **What is the "Root" route?**  
+   The Router is basically just a matching service and matches the URL with the appropriate controller action to run. 
+  **1. What are the seven RESTful routes for a resource?**
+  get "/posts" => "posts#index"
+  get "/posts/:id" => "posts#show"
+  get "/posts/new" => "posts#new"
+  post "/posts" => "posts#create"  # usually a submitted form
+  get "/posts/:id/edit" => "posts#edit"
+  put "/posts/:id" => "posts#update" # usually a submitted form
+  delete "/posts/:id" => "posts#destroy"
+  **1. Which RESTful routes share the same URL but use different verbs?**
+ 1 (posts#index) and 5 (posts#edit) refer to the same url but use different html
+  **1. How do you specify an ID or other variable in a route?**
+ Rails gives you a helper mothod that lets you create links (link_too) inwhich you need to supply text and a related URL
+  **1. How can you easily write all seven RESTful routes in Rails?**
+by typing  -- 
+...
+resouces :posts
+...
+  **1. What is the Rails helper method that creates the HTML for links?**
+link_to
+**1. Read the [Odin Project Controller Guide](http://www.theodinproject.com/ruby-on-rails/controllers)**
 1. Read the [Odin Project Views Guide](http://www.theodinproject.com/ruby-on-rails/views) and use it to <strong>answer the following questions</strong>
   1. What is a layout?
   1. What's the difference between a "view template" and a "layout"?
