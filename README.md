@@ -28,19 +28,28 @@ resouces :posts
 link_to  
 **1. Read the [Odin Project Controller Guide](http://www.theodinproject.com/ruby-on-rails/controllers)**  
 1. Read the [Odin Project Views Guide](http://www.theodinproject.com/ruby-on-rails/views) and use it to <strong>answer the following questions</strong>
-  1. What is a layout?
-  1. What's the difference between a "view template" and a "layout"?
-  1. What is a "Preprocessor"?
-  1. Why are preprocessors useful?
-  1. How do you make sure a preprocessor runs on your file?
-  1. What's the outputted filetype of a preprocessed *.html.erb file? What about a *.css.scss file?
-  1. What is the difference between the <%= and <% tags?
-  1. What is a view partial?
-  1. How do you insert a partial into your view?
-  1. How can you tell that a view file is a partial?
-  1. How do you pass a local variable to a partial?
-  1. What's the magical Rails shortcut for rendering a User? A bunch of Users?
-  1. What are asset tags and why are they used?
+  **1. What is a layout?**  
+layout is basically just a shell around the individual page  
+ ** 1. What's the difference between a "view template" and a "layout"?**  
+  **1. What is a "Preprocessor"?**  
+allows Ruby to processes the file using ERB, then treats it as regular HTML.  
+  **1. Why are preprocessors useful?** 
+the preprocessor's language makes your life easier by giving you some additional tools you can use (like having loops and working with variables) and compiles back down into a plain vanilla CSS or Javascript or HTML.  
+ ** 1. How do you make sure a preprocessor runs on your file?**    
+  **1. What's the outputted filetype of a preprocessed *.html.erb file? What about a *.css.scss file?**
+
+  **1. What is the difference between the <%= and <% tags?**  
+the <%= version actually displays whatever is returned inside the ERB tags. If you use <%, it will execute the code but, no matter what is returned by that line, it will not actually display anything in your HTML template.  
+ ** 1. What is a view partial?**  
+ partials are just HTML files that aren't meant to be complete but can be shared by other files.
+  **1. How do you insert a partial into your view?**
+  **1. How can you tell that a view file is a partial?**  
+  **1. How do you pass a local variable to a partial?**  
+  <%= render "shared/your_partial", :locals => { :user => @user } %>
+  **1. What's the magical Rails shortcut for rendering a User? A bunch of Users?**  
+  drop the@ and call it a normal variable  
+  **1. What are asset tags and why are they used?**  
+  helper methods that output HTML tags to grab CSS or Javscript files, as well as grabbing images. the tags help  ruby locate these files based on name and render the correct html tag.  
 1. (By Monday 3/9) By yourself, complete the [Odin Project: Basic Routes, Views and Controllers](http://www.theodinproject.com/ruby-on-rails/basic-routes-views-and-controllers)
   1. Skip step 1 of the Application Skeleton section.  As we did last week, you will:
     1. Create a new Rails workspace on C9
